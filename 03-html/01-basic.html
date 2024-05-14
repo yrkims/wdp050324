@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <html lang="ko"></html>
+    <!--페이지 설정-->
+    <head>
+        <!--문자 인코딩 설정-->
+        <meta charset="UTF-8" />
+        <!--페이지 제목-->
+        <title>Yerim's webpage</title>
+        <!--소셜미디어-->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="페이지 제목" />
+        <meta property="og:description" content="페이지 설명" />
+        <meta property="og:image" content="http://www.mysite.com/article/article1_featured_image.jpg" />
+        <meta property="og:url" content="http://www.mysite.com/article/article1.html" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="페이지 제목" />
+        <meta name="twitter:description" content="페이지 설명" />
+        <meta name="twitter:image" content="http://www.mysite.com/article/article1.html" />
+        <meta name="twitter:domain" content="사이트 명" />
+        <!-- 스타일 시트 -->
+        <style>
+            /*선택자 {속성: 값;}*/
+            /*class 선택자 .(점)표기해야함*/
+            .box1 {
+                background-color: rgb(216, 255, 218);
+            }
+            /*id선택자 #(샵)표기*/
+            #box1 {
+                background-color: beige;
+            }
+        </style>
+        <!--반응형 웹 설정-->
+        <meta name="viewport" content="width=device-width" />
+    </head>
+    <!--페이지 본문-->
+    <body>
+        <!-- 이미지 분기 대응 -->
+        <picture>
+            <img src="./images/img_smallflower.jpg " alt="small flower" />
+        </picture>
+        <!-- 600px 이하 -->
+        <source media="(max-width: 600px)" srcset="https://www.w3schools.com/html/img_smallflower.jpg" <source
+        media="(max-width: 60px)" srcset="https://www.w3schools.com/html/img_smallflower.jpg"
+
+        <!-- .wrap /#wrap -->
+        <div classs="wrap">
+            <header>
+                <h1>
+                    <a href="#">Logo is here </a>
+                </h1>
+                <nav>
+                    <ul>
+                        <li>
+                            <!-- ="#"은 임시링크, 여기에 연결되는 링크 넣으면 됨 -->
+                            <a href="#">menu1</a>
+                            <ul>
+                                <li><a href="#">menu1-1</a></li>
+                                <li><a href="#">menu1-2</a></li>
+                                <li><a href="#">menu1-3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">menu2</a>
+                        </li>
+                        <li>
+                            <a href="#">menu3</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                main컨텐츠 들어갈 곳
+                <!-- 주제별 나누기,섹션에는 제목 꼭 있어야함 -->
+                <section>
+                    <h2>section title</h2>
+                    <p>section content</p>
+                </section>
+                <section></section>
+                <!-- 독립된 기사나 글 -->
+                <article></article>
+                <!-- 사이드 콘텐츠 -->
+                <aside></aside>
+            </main>
+            <footer>footer임</footer>
+        </div>
+
+        <!-- div tag/ 웹페이지 섹션 그룹화 하는데 사용함 -->
+        <div class="box1">
+            <h2>타이틀</h2>
+            <!-- lorem10하면 10개 단어 나옴 -->
+            <p>lorem10</p>
+        </div>
+        <div class="box1">
+            <h2>타이틀</h2>
+            <!-- lorem10하면 10개 단어 나옴 -->
+            <p>lorem10</p>
+        </div>
+        <div id="box1">
+            <h2>타이틀</h2>
+            <!-- lorem10하면 10개 단어 나옴 -->
+            <p>lorem10</p>
+        </div>
+        <!-- id는 중복 사용 금지 -->
+        <div id="box2">
+            <h2>타이틀</h2>
+            <!-- lorem10하면 10개 단어 나옴 -->
+            <p>lorem10</p>
+        </div>
+        /.box1
+        <div>
+            <h2>나는 왜 10글자 안나오는건지..</h2>
+            <!-- lorem10하면 10개 단어 나옴 -->
+            <p>lorem10</p>
+        </div>
+
+        <!-- block & inline tag -->
+        <!-- block -->
+        <!-- 기본값:width100% -->
+        <!-- 밑으로 쌓임 -->
+        <div>block</div>
+        <div>block</div>
+        <div>block</div>
+        <div>block</div>
+        <div>block</div>
+
+        <!-- inline -->
+        <!-- width, height 적용 안됨,  -->
+        <!-- 가로로 쌓이넹 신기하다 -->
+        <span>inline</span>
+        <span>inline</span>
+        <span>inline-추가추가쓰</span>
+
+        <!--제목 태그-->
+        <h1>logo</h1>
+        <h2>섹션 제목</h2>
+        <h3>섹션 소제목</h3>
+        <p>문단 내용</p>
+        <!--링크 태그-->
+        <a href="https://www.naver.com">naver</a>
+        <!-- 이미지 태그-->
+        <img
+            src="https://nng-phinf.pstatic.net/MjAyNDA1MDhfMTA5/MDAxNzE1MTU5MjkzMDYw.b4qPGgRhaGZXmHYej4hyErau1SnnEIKXZoSzKGEpZPog.v3FqLGJzVl6_qE-E_4K-nOO-Dlmbcj5_VobSSo0E8xIg.GIF/01)_KV_%EC%98%81%EC%97%AD.gif?type=w1678"
+            alt="이미지
+        설명"
+            <hr
+        />
+        />
+        <!--./현재위치-->
+        <!--../상위(로컬)-->
+        <img src="../03-html/images/sky_files/13_html_images.png" alt="image1" />
+        <!--문단 태그-->
+        <p>
+            <strong>중요한텍스트</strong>
+            <b>Lorem ipsum dolor sit, 굵은 텍스트</b> amet consectetur adipisicing elit. Eius tenetur numquam,
+            laudantium eveniet, incidunt vero officiis sapiente accusamus suscipit repellat optio debitis porro
+            temporibus similique. <br />
+            <em>Accusamus blanditiis reprehenderit exercitationem dolore. </em> 너무 잠오네요 언제 집가나
+            <br />
+            떡볶이 먹고 자면 얼굴 붓겠지 <br />주석 ctrl+/
+        </p>
+        <!-- 상위(로컬) -->
+
+        <img src="./images/sky.jpg" alt="sky" <!-- table tag -- />
+        <table border="1">
+            <!-- 테이블 타이틀 -->
+            <caption>
+                table title
+            </caption>
+            <!-- 열 그룹 -->
+            <colgroup>
+                <col style=:width:50"/>
+                <col span="2" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Contact</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Anders</td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>Centro comercial Moctezuma</td>
+                    <td>Francisco Chang</td>
+                    <td>Mexico</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <!-- 테이블 바닥글 -->
+                <tr>
+                    <td>sum</td>
+                    <td>100</td>
+                    <td>200</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!-- 목록 태그 -->
+        <!-- 순서가 없는 목록, 앞에 점붙어서 나옴  -->
+        <ul>
+            <li>coffee</li>
+            <li>tea</li>
+            <li>milk</li>
+        </ul>
+        <!-- 순서가 있는 목록임 -->
+        <ol>
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ol>
+    </body>
+</html>
