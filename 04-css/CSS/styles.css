@@ -1,0 +1,135 @@
+@import 'fonts.css';
+
+/* 기본 셋팅 값 : reset */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    letter-spacing: -0.4px;
+    line-height: 1.5;
+    /* chrome browser 폰트 사이즈 기본값은 16px */
+    font-size: 16px;
+    font-family: 'Poetsen One', sans-serif;
+}
+/* desktop */
+@media only screen and (min-width: 600px) {
+    * {
+        font-size: 14px;
+    }
+}
+main {
+    background-color: lightpink;
+}
+
+#header {
+    background-color: rgba(194, 255, 194, 0.6);
+}
+
+/* 글씨에 색상 변경할때는 해당 태그의 색상을 변경해야함 */
+#header #logo a::before {
+    content: '\f578';
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+    display: block;
+    width: 500px;
+    color: rgb(255, 0, 212);
+    text-decoration: none;
+    text-align: center;
+}
+#header #logo img {
+    display: block;
+    margin-top: -5px;
+}
+
+/* #gnb > ul > li {border: 1px solid blue;
+} */
+/* depth1  li한테 border값 넣기,depth1한테만 넣을때 꺽새 넣어야함 , 자식만 잡고 싶은 경우*/
+.depth1 > li > a::before {
+    content: '\f101';
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+}
+.depth1 .li > li > a::before {
+    content: '\f578';
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+}
+.gnb .depth1 > li {
+    border: 1px solid lightseagreen;
+}
+.gnb .depth2 li {
+    border: 2px dotted yellowgreen;
+}
+.form-search .input-search {
+    border: 1px solid black;
+}
+.form-search .input-search:focus {
+    background-color: rgb(122, 122, 122);
+}
+/* util */
+.util .btn-menu {
+    background-color: rgb(48, 44, 255);
+    color: #fff;
+    border-style: double;
+    border-color: black;
+}
+util. .util .btn-menu:hover {
+    background-color: aqua;
+    color: black;
+    border-style: double;
+    border-color: black;
+}
+
+.main-intro {
+    border: 1px solid red;
+}
+
+.bg-grey {
+    background-color: #f0f0f0;
+}
+/* #은 id */
+#main {
+    text-transform: capitalize;
+}
+.corp-area .list-corp {
+    display: flex;
+}
+.corp-area .list-corp a {
+    display: flex;
+    font-family: 'HSSanTokki20-Regular';
+}
+.corp-area .list-corp li:first-child {
+    border: 1px solid black;
+}
+.corp-area .list-corp li:nth-last-child(2) {
+    border: 1px solid black;
+}
+.corp-area .list-corp li:nth-last-child(3) {
+    border: 1px solid black;
+}
+.corp-area .list-corp li:last-child {
+    border: 1px solid black;
+}
+/* 첫번째 li */
+/* li가상 before:display:none */
+.corp-area li:first-child::before {
+    content: '';
+    display: none;
+    width: 5px;
+    height: 30px;
+    margin: 10px;
+
+    background-color: aquamarine;
+}
+.corp-area li::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 30px;
+    margin: 10px;
+
+    background-color: aquamarine;
+}
+.corp-area li::after {
+    content: '🎵';
+}

@@ -6,7 +6,7 @@
         <!--문자 인코딩 설정-->
         <meta charset="UTF-8" />
         <!--페이지 제목-->
-        <title>Yerim's webpage</title>
+        <title>html practice</title>
         <!--소셜미디어-->
         <meta property="og:type" content="website" />
         <meta property="og:title" content="페이지 제목" />
@@ -35,6 +35,108 @@
     </head>
     <!--페이지 본문-->
     <body>
+        <!-- select box -->
+        <form>
+            <label for="fruit">Choose your fav fruit</label>
+            <select name="fruit" id="fruit">
+                <option value="apple">apple</option>
+                <option value="grape">grape</option>
+                <option value="lemon">lemon</option>
+            </select>
+            <br />
+            <!-- submit -->
+            <input />
+            <br />
+        </form>
+
+        <!-- textarea -->
+        <label for="message">message</label>
+        <textarea name="message" rows="10" cols="20">type message here</textarea>
+        <!-- button:액션이 일어남 -->
+        <button>submit</button>
+        <!-- link:단순 링크로 이동 -->
+        <a href="#">link</a>
+        <br />
+
+        <!-- input tag -->
+        <form>
+            <!-- text name1자리에 똑같이 이름 넣어야 함 -->
+            <label for="name1">이름: </label>
+            <input type="text" name="c" id="name1" />
+        </form>
+        <!-- submit button -->
+        <form>
+            <label for="submit">Submit</label>
+        </form>
+        <!-- 미디어 태그 -->
+        <!-- 비디오 태그 -->
+        
+        <video src="https://www.w3schools.com/html/mov_bbb.mp4" 
+        autoplay muted></video>
+        <video controls>
+            <source src="./video/mov_bbb.webm">
+
+        </video>
+        <!-- youtube video -->
+        <iframe width="892" height="502" src="https://www.youtube.com/embed/EpenkKzaY2w?controls=0&autoplay=1&mute=1" title="왕족의 후예였던 그들은 왜 중국에서 가장 가난하게 살고 있을까?┃역사책에서도 지도에서도 볼 수 없는 그들의 삶과 터전┃세계테마기행┃#골라듄다큐" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>"
+        <form action="">
+            <fieldset>
+                <legend>form caption</legend>
+                <!-- username and password -->
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="김예림"  /><br /><br>
+
+                <label for="password">Password:</label>
+                <input required type="text" id="password" name="password" value="" placeholder="문자, 숫자, 특수문자 포함 10자 이상" />
+                <br />
+                
+                <br>
+                <!-- email -->
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" placeholder="mail@mail.com"/><br>
+        <br>
+
+
+        <!-- file -->
+        <form>
+            <label for="myfile">Select a file</label>
+            <input type="file" id="myfile" name="myfile"
+        </form><Br><br>
+
+        <!-- number -->
+        <label for="number">Number</label>
+        <input type="number" name="number" id="number"><br><br>
+
+        <!-- tel no. -->
+        <form>
+            <label for="phone">Enter your phone number</label>
+            <input type="phone" id="phone" name="phone" placeholder="010-0000-0000" maxlength="11">
+        </form><br><br>
+
+        <input type="Submit" value="submit" />
+                <input type="Reset" value="reset"></input>
+            </fieldset>
+        </form>
+        
+
+        <br><br><br>
+        
+
+
+
+
+        <!-- radio btn -->
+        <input type="radio" name="color" id="red" />
+        <label for="red">빨강</label><br />
+        <input type="radio" name="color" id="blue" />
+        <label for="blue">파랑</label><br />
+        <input type="radio" name="color" id="yellow" />
+        <label for="yellow">노랑</label>
+        <br />
+        <!-- check box -->
+        <input type="checkbox" name="agree" id="agree" />
+        <label for="vehicle">I have a bike</label>
+
         <!-- 이미지 분기 대응 -->
         <picture>
             <img src="./images/img_smallflower.jpg " alt="small flower" />
