@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Display</title>
+    </head>
+    <body>
+        <h1>display</h1>
+        <!-- display는 요소가 웹 페이지에 표시되는 방식을 지정하는데 사용됨 -->
+        <h2>block</h2>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <style>
+            .box1 {
+                width: 100px;
+                height: 100px;
+                background: lightcoral;
+            }
+        </style>
+        <h2>inline(글자 한개라고 생각)</h2>
+        <span class=":box2"></span>
+        <style>
+            /* inline은 가로 세로값이 안들어감 */
+            .box2 {
+                width: 100px;
+                height: 100px;
+                background: lightblue;
+            }
+        </style>
+        <h2>inline block</h2>
+        <a href="#" class="box3">menu1</a>
+        <a href="#" class="box3">menu2</a>
+        <a href="#" class="box3">menu3</a>
+        <style>
+            /* block:가로세로 사이즈 세팅 가능 */
+            /* inline: 옆으로 배치됨 */
+            .box3 {
+                display: inline-block;
+
+                width: 50px;
+                height: 50px;
+                background: lightsalmon;
+                text-align: center;
+                line-height: 50px;
+            }
+        </style>
+        <h2>none</h2>
+        <div class="box4"></div>
+        <style>
+            .box4 {
+                display: none;
+                /* display:block  으로 하면 다시 보임 */
+                width: 100px;
+                height: 100px;
+                background: lightgoldenrodyellow;
+            }
+        </style>
+        <h2>flex</h2>
+        <div class="flex wrap">
+            <div>item</div>
+            <div>item</div>
+            <div>item</div>
+            <div>item</div>
+            <div>item</div>
+            <div>item</div>
+            <div>item</div>
+            <div>item</div>
+            <div>item</div>
+            <div>item</div>
+            <div>item</div>
+            <div>item</div>
+            <div>item</div>
+        </div>
+
+        <div class="flex direction">
+            <div>item1</div>
+            <div>item2</div>
+            <div>item3</div>
+        </div>
+        <div class="flex justify">
+            <div>item</div>
+            <div>item</div>
+            <div>item</div>
+        </div>
+        <div class="flex items">
+            <div>item</div>
+            <div>item</div>
+            <div>item</div>
+        </div>
+        <h2>flex btn</h2>
+        <h3>flex-items</h3>
+        <div class="flex basis">
+            <div>가</div>
+            <div>가나</div>
+            <div>가나다</div>
+        </div>
+        <style>
+            .basis div{
+                flex-basis:0;
+            }
+            </style>
+
+
+        <h3>flex-items</h3>
+        <div class="flex order">
+            <div>item1</div>
+            <div>item2</div>
+            <div>item3</div>
+            <div>item4</div>
+            <div>item5</div>
+            <div>item6</div>
+            <div>item7</div>
+            <div>item8</div>
+            <div>item9</div>
+            <div>item10</div>
+            <div>item1</div>
+            <div>item12</div>
+        </div>
+        <style>
+            .order{
+                display:flex;
+                
+                
+            }
+            .order div:first-child
+            {
+                order:2;
+            }
+            .order div:last-child{order:1;}
+            .order div:nth-child(2){order:3;}
+        </
+        <h3>flex-items</h3>
+        <div class="wrap">
+            <header>header</header>
+            <main>main</main>
+            <div class="slide">slide</div>
+        </div>
+        <style>
+            .wrap{display:flex;}
+            header{width:200px;}
+            main{width:400px;
+            border:1px solid lightseagreen;}
+            .slide{flex-grow:1;
+                border:1px solid lightseagreen;}
+        </style>
+        <br>
+        <br>
+        <h3>flex-container</h3>
+
+        <a href="#" class="btn-flex">버튼임</a>
+        <style>
+            .btn-flex {
+                display: flex;
+                width: 300px;
+                height: 200px;
+                background-color: rgb(255, 231, 171);
+                justify-content: space-around;
+                align-items: center;
+            }
+            .direction {
+                display: flex;
+                flex-direction: column;
+            }
+            .wrap {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .flex {
+                border: 5px solid rgb(255, 121, 121);
+            }
+            .flex div {
+                height: 100px;
+                /* min-width: 100px; */
+                margin: 20px;
+                background: rgb(121, 233, 121);
+            }
+            .justify {
+                display: flex;
+                justify-content: center;
+            }
+            .items {
+                display: flex;
+                height: 300px;
+                align-items: center;
+                justify-content: center;
+            }
+            .items div {
+                height: auto;
+            }
+        </styl>
+    </body>
+</html>

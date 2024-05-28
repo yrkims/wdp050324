@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .wrap {
+                width: 500px;
+                margin: 0 auto;
+            }
+            header {
+                /* header 자식 두명 다 떠있는 상태라 높이값 없음 */
+                /* 하늘에 떠있느널 가라앉히는 방법이 overflow임 */
+                /* 부모한테 overflow auto 넣으면 다시 높이 돌아옴 */
+                /* overflow: auto; */
+                height: 100px;
+                background: lightgoldenrodyellow;
+            }
+            header::after {
+                content: '';
+                clear: both;
+                display: block;
+            }
+            header h1 {
+                float: left;
+            }
+            header nav {
+                float: right;
+            }
+            main section:first-child {
+                float: left;
+            }
+            main section:nth-child(2) {
+                text-align: center;
+            }
+
+            main {
+                overflow: hidden;
+                background: rebeccapurple;
+            }
+
+            main section {
+                float: left;
+                width: 32%;
+                margin-right: 2%;
+                /* 32*3=96 */
+            }
+            main section:last-child {
+                float: left;
+                margin-right: 0%;
+                text-align: right;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="wrap">
+            <header>
+                <h1>float</h1>
+                <nav>gnb</nav>
+            </header>
+
+            <main>
+                <section>공지사항</section>
+                <section>배너</section>
+                <section>바로가기</section>
+            </main>
+            <footer></footer>
+        </div>
+    </body>
+</html>

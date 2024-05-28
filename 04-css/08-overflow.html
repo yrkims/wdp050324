@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>overflow</h1>
+        <h2>visible(기본값)</h2>
+        <div class="box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptatem nihil eaque distinctio minima
+            magnam quae id provident omnis, exercitationem accusamus sit natus explicabo sint possimus quam consequatur
+            officiis repellat.''
+        </div>
+        <style>
+            .box {
+                width: 200px;
+                height: 150px;
+                background: floralwhite;
+            }
+        </style>
+        <br />
+
+        <h2>hidden속성</h2>
+        <div class="box hidden">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga saepe debitis, similique rerum dolores quas
+            labore illum! Obcaecati nesciunt veritatis aperiam odio dolorem eveniet! Numquam nisi suscipit repudiandae
+            laboriosam ad.
+        </div>
+        <style>
+            .hidden {
+                overflow: hidden;
+            }
+        </style>
+        <h2>scroll(글이 박스보다 길경우)</h2>
+        <div class="box scroll">
+            글이 박스보다 길면 스크롤 생기고, 안에 다 들어가면 안생김Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Voluptatum voluptatem nihil eaque distinctio minima magnam quae id provident omnis, exercitationem
+            accusamus sit natus explicabo sint possimus quam consequatur officiis repellat possimus quam consequatur.''
+        </div>
+        <style>
+            .scroll {
+                overflow: scroll;
+            }
+        </style>
+        <h2>scroll(글이 박스안에 들어갈 경우)</h2>
+        <div class="box scroll">
+            글이 박스보다 길면 스크롤 생기고, 안에 다 들어가면 안생김Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Voluptatum voluptatem nihil e
+        </div>
+        <style>
+            .scroll {
+                overflow: scroll;
+            }
+        </style>
+        <h2>auto(글 길이에 맞게 박스가 생김, 평상시에 사용 이거하셈)</h2>
+        <div class="box auto">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut dolor vitae aperiam totam illo ex autem, quis
+            ipsam reiciendis cumque corporis nam natus ab molestias laboriosam nulla at corrupti illo ex autem,
+            quisexpedita!
+        </div>
+        <style>
+            .auto {
+                overflow: auto;
+            }
+        </style>
+    </body>
+</html>

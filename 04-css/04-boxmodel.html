@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Box Model</title>
+    </head>
+    <body>
+        <h1>Boxmodel 1</h1>
+        <h2>Width & Height</h2>
+        <div class="box1"></div>
+        <div class="box1-1"></div>
+        <style>
+            .box1 {
+                /* width 100가 디폴트 값 */
+                /* width:50% */
+                /* height 의 디폴트 값은 0! 세팅하지 않으면 안나옴 */
+                height: 200px;
+                background: lightblue;
+            }
+            .box1-1 {
+                width: 100%;
+                height: 100%;
+                background: rgb(255, 204, 109);
+            }
+        </style>
+
+        <h2>Max-width</h2>
+        <div class="box2"></div>
+        <style>
+            .box2 {
+                /* max-width는 기본값이 none */
+                max-width: 1280px;
+                /* min-width 기본값은 0 */
+                min-width: 360px;
+                height: 200px;
+                /* margin auto면 블럭이 가운데 정렬됨 */
+                margin: auto;
+                background: lightgoldenrodyellow;
+            }
+            </styl > <br / > <h2 > Margin</h2 > <div class='box3' > box3 is here</div > <style > .box3 {
+                width: 400px;
+                height: 400px;
+                background: lightgreen;
+                /* 높이값은 auto하지 않고 fix */
+                /* margin-top: 100px; */
+                /* 양쪽 마진 auto로 하면 가운데로 알아서 정렬됨 */
+                /* margin-left: auto; */
+                /* margin-right: auto; */
+                /* margin-bottom: 400px; */
+                margin: 100px 200px 300px 400px;
+            }
+        </style>
+        <div class="box4"></div>
+        <style>
+            .box4 {
+                width: 400px;
+                height: 400px;
+                background: lightpink;
+                /* 높이값은 auto하지 않고 fix */
+                /* margin-top: 100px; */
+                /* 양쪽 마진 auto로 하면 가운데로 알아서 정렬됨 */
+                /* margin-left: auto; */
+                /* margin-right: auto; */
+                /* margin-bottom: 400px; */
+                margin: 100px auto 400px;
+            }
+        </style>
+        <h2>Padding</h2>
+        <div class="box5">menu1</div>
+        <div class="box6">menu2</div>
+        <div class="box7">menu3</div>
+        <style>
+            .box5 {
+                display: inline-block;
+                width: 100px;
+                height: 100px;
+                padding: 10px;
+                text-align: center;
+                box-sizing: border-box;
+                background: rgb(69, 255, 255);
+            }
+            .box6 {
+                display: inline-block;
+                padding: 10px 25px;
+                background: lightskyblue;
+            }
+            .box7 {
+                display: inline-block;
+                padding: 10px 25px 50px 30px;
+                text-align: center;
+                background: rosybrown;
+            }
+        </style>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Background</title>
+    </head>
+    <body>
+        <h1>background</h1>
+        <h2>Sprite Image</h2>
+        <div class="sp1"></div>
+        <div class="sp2"></div>
+        <style>
+            .sp1{
+                width:143px;
+                height: 137px;
+                background: url(./sprite\ 0521.png) no-repeat 0 0;
+                }
+                .sp2{
+                    width:104px;
+                    height:100px;
+                    background: url(./sprite\ 0521.png) no-repeat -400px -100px;
+                }
+        </style>
+        <h2>background-size</h2>
+        <a href="#" class="box2">라이트 모드로 보기</a>
+        <style>
+            .box2 {
+                display: block;
+                width: 182px;
+                height: 90px;
+                /* background-image: url(./btn.png); */
+                /* background-size: contain; */
+                /* background-repeat: no-repeat; */
+                text-indent: -9999px;
+                /* background shorthand  순서: color image repeat attachment position / size */
+                background: #eee url(./btn.png) no-repeat 0 0 / contain;
+            }
+        </>
+        <a href="#" class="box3">box3입니다</a>
+        <style>
+            .box3 {
+                display: block;
+                width: 182px;
+                height: 90px;
+                background-image: url(./btn.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                text-indent: -9999px;
+            }
+            <h2>background-color</h2>
+        <div class="bg1">background-color</div>
+        <style>
+            /* rgba는 배경색을 투명하게, opacity는 object를 투명하게 */
+            .bg1 {
+                background-color: rgba(187, 255, 0, 0.486);
+            }
+        </>
+        <h2>background-img</h2>
+        <div class="box1">
+            <style>
+                .box1 {
+                    width: 200px;
+                    height: 200px;
+                    background-color: rgb(249, 255, 192);
+                    background-image: url(./10627436.png);
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    background-size: 200px auto;
+                }
+            </style>
+        </div>
+    </body>
+</html>

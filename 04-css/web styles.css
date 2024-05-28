@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #222;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    list-style: none;
+}
+.wrap {
+    /* block요소, 나 자신을 가운데 정렬 하고싶을때, flex는 내 자식을 가운데 정렬하고 싶을 때 사용 */
+    width: 1200px;
+    /* 마진 오토주면 가운데 정렬 */
+    margin: 0 auto;
+}
+
+header {
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    height: 100px;
+    background: lightgrey;
+    justify-content: space-between;
+}
+header h1 {
+    display: flex;
+}
+
+header h1 a {
+    display: flex;
+    align-items: center;
+}
+/* class 는 점 찍고 아이디는 그냥 하면 됨 */
+#gnb:hover .nav-bg {
+    display: block;
+}
+#gnb .nav-bg {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: #fff;
+}
+
+#gnb {
+    display: flex;
+    align-items: center;
+}
+#gnb .depth1 {
+    display: flex;
+}
+#gnb .depth1 > li {
+    position: relative;
+}
+
+#gnb .depth1 > li > a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 0 20px;
+}
+#gnb .depth1 > li > a::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: red;
+}
+#gnb .depth1 > li > a:hover {
+    color: red;
+    font-weight: bold;
+    /* border-bottom: 2px solid red; */
+}
+#gnb .depth1:hover > li .depth2 {
+    display: block;
+}
+#gnb .depth2 {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+}
+#gnb .depth2 li a {
+    display: block;
+    padding: 10px 0;
+    left: 0;
+    width: 100%;
+}
+#gnb .depth2 li:hover {
+    background: red;
+}
+
+.slide {
+    position: relative;
+    height: 300px;
+    /* 튀어나온 메뉴 삭제 */
+    overflow: hidden;
+    background: lightgreen;
+}
+.slide ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 300%;
+}
+.slide ul li {
+    border: 1px solid #222;
+    height: 300px;
+    width: 100%;
+}
+main {
+    display: flex;
+    justify-content: space-between;
+}
+section {
+    height: 200px;
+    width: 400px;
+    border: 1px solid rgb(1, 160, 9);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background: rgb(255, 230, 230);
+}
+footer div {
+    border: 1px solid orange;
+    width: 15%;
+    height: 100%;
+}
+footer .copyright {
+    width: 70%;
+}
+/* id는 # */
+#layerpop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* width: 100%; */
+    /* height: 100%; */
+    /* background: rgba(0, 0, 0, 0.5); */
+}
+#layerpop .layerbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0 0 -250px;
+
+    width: 500px;
+    height: 300px;
+    /* background: #fff; */
+    border-radius: 10px;
+}
