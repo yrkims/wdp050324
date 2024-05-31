@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Animation</title>
+        <style>
+            * {
+                margin: 0;
+            }
+            .container {
+                position: relative;
+                width: 100%;
+                height: 10vh;
+                background-color: lightgray;
+            }
+
+            .circle {
+                overflow: hidden;
+                position: absolute;
+                top: 20%;
+                left: 30%;
+                width: 200px;
+                height: 200px;
+                background-color: coral;
+                border-radius: 50%;
+                opacity: 0.7;
+                animation: circle-ani 3s;
+                animation-fill-mode: infinite;
+            }
+            @keyframes circle-ani {
+                0% {
+                    top: 50%;
+                    right: 70%;
+                }
+                50% {
+                    top: 30%;
+                    right: 80%;
+                }
+                100% {
+                    top: 60%;
+                    right: 70%;
+                }
+            }
+
+            .square {
+                overflow: hidden;
+                position: absolute;
+                /* top: 10%;
+                left: 30%; */
+                width: 100px;
+                height: 400px;
+                background-color: rgb(21, 255, 99);
+
+                opacity: 0.7;
+                animation: square-ani 3s;
+                animation-fill-mode: infinite;
+                animation-timing-function: ease-in;
+            }
+            @keyframes square-ani {
+                0% {
+                    top: 0;
+                    left: -300px;
+                }
+                50% {
+                    top: 80%;
+                    left: 30%;
+                }
+                100% {
+                    top: 10%;
+                    left: 20%;
+                }
+            }
+
+            .text-slide {
+                overflow: hidden;
+                display: flex;
+                padding: 20px 0;
+                background-color: rgb(0, 0, 0);
+            }
+            .text-slide .box {
+                transform: translateX(0);
+                font-size: 26px;
+                font-weight: 700;
+                color: #fff;
+                white-space: nowrap;
+                animation: textslide-ani 10s infinite linear;
+            }
+            @keyframes textslide-ani {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-100%);
+                    animation-fill-mode: infinite;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>animate</h1>
+        <div class="text-slide">
+            <div class="box">
+                Lorem ipsum dolor sit amet consectetur adipisicingsit amet consectetur adipisicing sit amet consectetur
+                adipisicingsit amet consectetur adipisicing sit amet consectetur adipisicing elit. Explicabo sed
+                provident velit.
+            </div>
+        </div>
+        <div class="container">
+            <div class="circle"></div>
+            <div class="square"></div>
+        </div>
+    </body>
+</html>

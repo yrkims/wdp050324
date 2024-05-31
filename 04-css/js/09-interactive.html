@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>09-interactive</title>
+        <style>
+            .box div {
+                transition: transform 1s ease;
+                width: 200px;
+                height: 200px;
+                background-color: rebeccapurple;
+            }
+            .box {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+                background-color: rgb(203, 250, 127);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>interactive</h1>
+        <h2>transform</h2>
+        <div class="box">
+            <div class="t1"></div>
+        </div>
+        <div class="box">
+            <div class="t2"></div>
+        </div>
+        <div class="box">
+            <div class="t3"></div>
+        </div>
+        <div class="box">
+            <div class="t4"></div>
+        </div>
+        <style>
+            .t4:hover {
+                transform: skew(20deg);
+                background-color: aqua;
+            }
+            .t3:hover {
+                transform: scale(2);
+                background-color: aqua;
+            }
+            .t2:hover {
+                transform: rotate(40deg);
+                background-color: rgb(13, 150, 47);
+            }
+            .t1:hover {
+                /* transform: translate(x,y); */
+                transform: translate(50px, -50px);
+                background-color: aqua;
+            }
+        </style>
+    </body>
+</html>
