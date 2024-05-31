@@ -1,3 +1,12 @@
+@import 'font.css';
+/* 변수저장 */
+:root {
+    --primary: green;
+    --secondary: #066;
+    --white: #fff;
+    --black: #000;
+    --swiper-themre-color: var(--primary);
+}
 * {
     margin: 0;
     padding: 0;
@@ -8,19 +17,68 @@
     letter-spacing: -0.5px;
     list-style: none;
 }
+/* 공통 컴포넌트 */
+a:hover {
+    text-decoration: underline;
+}
+.bd-grey {
+    background: #f9f9f9;
+}
 .wrap {
     /* block요소, 나 자신을 가운데 정렬 하고싶을때, flex는 내 자식을 가운데 정렬하고 싶을 때 사용 */
-    width: 1200px;
+    max-width: 1200px;
+    padding: 0 30px;
     /* 마진 오토주면 가운데 정렬 */
     margin: 0 auto;
+    padding-bottom: 1000px;
+}
+
+.btn-g {
+    position: relative;
+    display: inline-flex;
+    min-width: 170px;
+    align-items: center;
+    padding: 17px 40px 17px 30px;
+    background: #fff;
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    color: green;
+}
+.btn-g:hover {
+    transition: transform 1s ease;
+    border: 2px solid green;
+    background: green;
+    color: #fff;
+}
+.btn-arrow::after {
+    content: '\f105';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    margin-right: 10px;
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+    font-size: 20px;
+}
+.btn-more {
+    position: absolute;
+    top: -120;
+    left: 0;
 }
 
 header {
-    position: relative;
+    /* relative는 스크롤 가능한거, 고정시키려면 fixedㅅ ㅏ용 */
+    position: fixed;
     z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+
     display: flex;
     height: 100px;
-    background: lightgrey;
+    max-width: 100%;
+    background: rgb(255, 255, 255);
     justify-content: space-between;
 }
 header h1 {
@@ -43,6 +101,14 @@ header h1 a {
     width: 100%;
     height: 300px;
     background: #fff;
+}
+.gnb .btn-menu{display:none;}
+@media screen and (max-width 1200px) {
+    body{background-color:lightblue;}
+    .wrap{padding 0 30px;}
+    .gnb .btn-menu{display;block;}
+    .gnb. .depth1{display:none}
+    
 }
 
 #gnb {
@@ -76,18 +142,25 @@ header h1 a {
 #gnb .depth1 > li > a:hover {
     color: red;
     font-weight: bold;
+    height: 100px;
     /* border-bottom: 2px solid red; */
 }
 #gnb .depth1:hover > li .depth2 {
     display: block;
+    max-height: 300px;
+    opacity: 1;
 }
 #gnb .depth2 {
-    display: none;
+    /* display: none; */
+    overflow: hidden;
     position: absolute;
     top: 100px;
     left: 0;
     width: 100%;
+    max-height: 0;
     background: #fff;
+    transition: all 0.3s;
+    opacity: 0;
 }
 #gnb .depth2 li a {
     display: block;
@@ -98,13 +171,25 @@ header h1 a {
 #gnb .depth2 li:hover {
     background: red;
 }
-
+/* slide */
+.swiper img,
+.swiper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.swiper-slide img {
+    border-radius: 30px;
+}
 .slide {
     position: relative;
     height: 300px;
     /* 튀어나온 메뉴 삭제 */
     overflow: hidden;
     background: lightgreen;
+}
+.slide-txt {
+    font-family: 'YEONGJUSeonbiTTF';
 }
 .slide ul {
     position: absolute;
@@ -118,16 +203,192 @@ header h1 a {
     height: 300px;
     width: 100%;
 }
+.swiper img {
+    width: 100%;
+}
+.swiper-slide {
+    position: relative;
+}
+.slide-intro .swiper-slide .slide-txt {
+    transform: translateY(0);
+    opacity: 0;
+}
+.slide-intro .swiper-slide-active .slide-txt {
+    transform: translateY(-50px);
+    opacity: 1;
+    transition: all 1s ease-in 0.3s;
+}
+.slide-intro .swiper-slide::before {
+    content: '';
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient(to right, rgba(3, 0, 0, 0.8), rgba(255, 255, 222, 0.2));
+}
+.slide-intro .slide-txt {
+    /* 포지션으로 하늘에 띄우기 */
+    position: absolute;
+    /* 항상 세로의 가운데 있게 */
+    top: 50%;
+    left: 120px;
+    /* y축으로 -50퍼 당기기 */
+    transform: translateY(-50%);
+    /* 가로가 너무 길면 여자 얼굴까지 글씨 가서 50으로 줄임 */
+    width: 50%;
+}
+.slide-intro .slide-txt strong {
+    display: block;
+    /* 밑에 글과 20px 띄어지게 마진 주기 */
+    margin-bottom: 20px;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.slide-intro .slide-txt p {
+    margin-bottom: 50px;
+    font-size: 24px;
+    color: #fff;
+    opacity: 0.7;
+}
+
+.slide-intro .slide-txt a {
+    display: inline-block;
+    padding: 12px 40px 8px;
+    background: green;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+/* content */
+/* contents */
 main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sec-g {
+    padding: 70px 0;
+}
+.sec-g .sec-tit {
+    display: inline-block;
+    margin-bottom: 50px;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 5px solid #007aff;
+}
+.sec-g .sec-tit span {
+    color: #007aff;
+}
+.sec-g .sec-cont {
+    position: relative;
+}
+
+.sec-business .sec-cont {
     display: flex;
     justify-content: space-between;
 }
-section {
-    height: 200px;
-    width: 400px;
-    border: 1px solid rgb(1, 160, 9);
+.sec-business .col-left {
+    width: 50%;
+}
+.sec-business .col-left img {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+    object-position: 20% 50%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+}
+.sec-business .col-right {
+    width: 50%;
+    padding: 60px 0 0 80px;
+}
+.sec-business .text-wrap .tit {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 700;
+}
+.sec-business .text-wrap .txt {
+    font-size: 18px;
+    color: #575757;
+}
+.sec-business .btn-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+.sec-business .btn-wrap .btn-g {
+    width: 250px;
+    margin-bottom: 10px;
+}
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background: url(https://images.unsplash.com/photo-1440288736878-766bd5839edb?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+        no-repeat 0 0 / cover fixed;
+    /* background-size: cover; */
+    /* background-attachment: fixed; */
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
 }
 
+.sec-news .list-news {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.sec-news .list-news li {
+    /* flex: 1; */
+    width: 30%;
+}
+.sec-news .list-news img {
+    width: 100%;
+}
+.sec-news .thumb {
+    position: relative;
+    overflow: hidden;
+    height: 270px;
+}
+.sec-news .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+.sec-news .thumb::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: rgba(0, 0, 0, 0.03);
+}
+.sec-news .txt strong {
+    display: block;
+    margin: 30px 0 15px;
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+}
+.sec-news .txt em {
+    font-style: normal;
+}
+/* footer */
 footer {
     display: flex;
     justify-content: space-between;
