@@ -1,116 +1,107 @@
-@import 'font.css';
-/* 변수저장 */
+@import 'fonts.css';
+/* 변수 저장 */
 :root {
-    --primary: green;
-    --secondary: #066;
+    --primary: #ff0000;
+    --secondary: #00ff00;
+    --default_txt: #222;
     --white: #fff;
     --black: #000;
-    --swiper-themre-color: var(--primary);
+    --swiper-theme-color: var(--primary);
+
+    /* breakpoint */
+    --break-tablet: 1200px;
+    --break-mobile:600px;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    color: #222;
+    color: var(--default-txt);
     line-height: 1.5;
     letter-spacing: -0.5px;
     list-style: none;
+    font-size: 14px;
 }
+/* px->em으로 바꾸는거 converter ㅅㅏ용 */
+/* tablet */
+@media screen and (max-width: 1200px){
+    *{font-size: 16px;}
+}
+/* mobile */
+@media screen and (max-width: 600px){
+    *{font-size: 18px;}
+}
+
 /* 공통 컴포넌트 */
 a:hover {
     text-decoration: underline;
 }
-.bd-grey {
+.bg-grey {
     background: #f9f9f9;
 }
-.wrap {
-    /* block요소, 나 자신을 가운데 정렬 하고싶을때, flex는 내 자식을 가운데 정렬하고 싶을 때 사용 */
-    max-width: 1200px;
-    padding: 0 30px;
-    /* 마진 오토주면 가운데 정렬 */
-    margin: 0 auto;
-    padding-bottom: 1000px;
-}
-
 .btn-g {
     position: relative;
     display: inline-flex;
     min-width: 170px;
     align-items: center;
-    padding: 17px 40px 17px 30px;
-    background: #fff;
-    border: 2px solid var(--primary);
-    border-radius: 50px;
-    color: green;
+    padding: 16px 50px 12px 30px;
+    background: var(--white);
+    border: 1px solid #d1d1d1;
+    border-radius: 30px;
+    color: var(--primary);
+    transition: all 0.3s;
 }
 .btn-g:hover {
-    transition: transform 1s ease;
-    border: 2px solid green;
-    background: green;
-    color: #fff;
+    border: 1px solid var(--primary);
+    background: var(--primary);
+    color: var(--white);
 }
+
 .btn-arrow::after {
     content: '\f105';
     position: absolute;
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
-    margin-right: 10px;
+    margin-left: 10px;
     font-family: 'Line Awesome Free';
     font-weight: 900;
     font-size: 20px;
 }
+
 .btn-more {
     position: absolute;
-    top: -120;
-    left: 0;
+    top: -120px;
+    right: 0;
+}
+@media screen and (max-width: 600px){
+    .btn-g{min-width:0}
 }
 
+/* layout */
+.wrap {
+    max-width: 1260px;
+    /* block 요소, 나 자신을 가운데 정렬하고 싶을 때 */
+    margin: 0 auto;
+    padding: 0 30px;
+}
 header {
-    /* relative는 스크롤 가능한거, 고정시키려면 fixedㅅ ㅏ용 */
-    position: fixed;
+    position: relative;
     z-index: 1000;
-    top: 0;
-    left: 0;
-    right: 0;
-
     display: flex;
-    height: 100px;
-    max-width: 100%;
-    background: rgb(255, 255, 255);
     justify-content: space-between;
+    height: 100px;
+    /* background: lightgray; */
 }
 header h1 {
     display: flex;
 }
-
 header h1 a {
     display: flex;
     align-items: center;
 }
-/* class 는 점 찍고 아이디는 그냥 하면 됨 */
-#gnb:hover .nav-bg {
-    display: block;
-}
-#gnb .nav-bg {
-    display: none;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    width: 100%;
-    height: 300px;
-    background: #fff;
-}
-.gnb .btn-menu{display:none;}
-@media screen and (max-width 1200px) {
-    body{background-color:lightblue;}
-    .wrap{padding 0 30px;}
-    .gnb .btn-menu{display;block;}
-    .gnb. .depth1{display:none}
-    
-}
-
 #gnb {
     display: flex;
     align-items: center;
@@ -121,31 +112,32 @@ header h1 a {
 #gnb .depth1 > li {
     position: relative;
 }
-
 #gnb .depth1 > li > a {
     position: relative;
     display: flex;
     align-items: center;
     height: 100px;
-    padding: 0 20px;
+    padding: 0 40px;
 }
-#gnb .depth1 > li > a::after {
+#gnb .depth1 > li:hover > a::after {
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    content: ' ';
     display: block;
     width: 100%;
     height: 2px;
     background: red;
 }
-#gnb .depth1 > li > a:hover {
+#gnb .depth1 > li:hover > a {
     color: red;
     font-weight: bold;
-    height: 100px;
     /* border-bottom: 2px solid red; */
 }
-#gnb .depth1:hover > li .depth2 {
+/* 모든 메뉴 다 보이게... */
+/* #gnb .depth1:hover > li .depth2 { */
+/* li 각각에 보이게... */
+#gnb .depth1 > li:hover .depth2 {
     display: block;
     max-height: 300px;
     opacity: 1;
@@ -158,38 +150,200 @@ header h1 a {
     left: 0;
     width: 100%;
     max-height: 0;
-    background: #fff;
+    background: var(--white);
     transition: all 0.3s;
     opacity: 0;
 }
 #gnb .depth2 li a {
     display: block;
-    padding: 10px 0;
+    padding: 5px 0;
+    font-size: 14px;
+    text-align: center;
+}
+#gnb .depth2 li a:hover {
+    color: red;
+}
+#gnb:hover .nav-bg {
+    display: block;
+}
+#gnb .nav-bg {
+    display: none;
+    position: absolute;
+    top: 100px;
     left: 0;
     width: 100%;
+    height: 100px;
+    background: var(--white);
 }
-#gnb .depth2 li:hover {
-    background: red;
+
+/* tablet */
+@media screen and (max-width: 1200px) {
+    body {
+        background-color: lightblue;
+    }
+    .wrap {
+        padding: 0 30px;
+    }
+    #gnb .btn-menu {
+        display: block;
+        postion: relative;
+        z-index: 1100;
+    }
+    #gnb .depth1 {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100vh;
+        padding: 100px 30px 30px;
+        background: var(--white);
+        transition: left 0.3s;
+    }
+    #gnb .depth1 > li {
+        margin-bottom: 20px;
+        border-radius: 10px;
+        background-color: rgba(241, 247, 250, 0.94);
+    }
+    #gnb .depth1 > li > a {
+        position: relative;
+    }
+    #gnb .depth1 > li > a::after {
+        content: '\f067';
+        position: absolute;
+        top: 50%;
+        right: 40px;
+        transform: translateY(-50%);
+        font-family: 'Line Awesome Free';
+        font-weight: 900;
+        font-size: 20px;
+    }
+    #gnb .depth2 {
+        position: static;
+        background-color: transparent;
+    }
+    #gnb .active .depth2 {
+        padding-bottom: 20px;
+        max-height: none;
+        opacity: 1;
+    }
+    /* #btnMenu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border: 0;
+        opacity: 0;
+        visibility: hidden;
+    } */
+    #gnb .btn-menu {
+        display: none;
+        background: none;
+        border: none;
+    }
+    #gnb .label-menu {
+        position: relative;
+        z-index: 1200;
+    }
+    #gnb .label-menu::before {
+        content: '\f0c9';
+        font-family: 'Line Awesome Free';
+        font-weight: 900;
+        font-size: 50px;
+    }
+    #gnb .label-menu span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-indent: -9999px;
+        font-size: 0;
+        line-height: 0;
+    }
+    #btnMenu:checked + .label-menu::before {
+        content: '\f00d';
+    }
+    #btnMenu:checked ~ .depth1 {
+        left: 0;
+    }
 }
+/* mobile */
+@media screen and (max-width: 600px) {
+    body {
+        background-color: olive;
+    }
+    .wrap {
+        padding: 0 20px;
+    }
+}
+
 /* slide */
 .swiper img,
 .swiper video {
     width: 100%;
-    height: 100%;
+    height: 800px;
     object-fit: cover;
 }
-.swiper-slide img {
+.slide-intro {
+    border-radius: 0 0 100px 100px;
+}
+
+.slide-intro .swiper-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 70%);
+}
+.slide-intro .slide-txt {
+    position: absolute;
+    top: 50%;
+    left: 120px;
+    transform: translateY(-50%);
+    /* text-align: center; */
+    width: 50%;
+    color: var(--white);
+}
+.slide-intro .swiper-slide .slide-txt {
+    transform: translateY(0);
+    opacity: 0;
+    transition: all 1s ease-in 0.5s;
+}
+.slide-intro .swiper-slide-active .slide-txt {
+    transform: translateY(-50%);
+    opacity: 1;
+}
+.slide-intro .slide-txt strong {
+    display: block;
+    margin-bottom: 20px;
+    font-family: 'MoveSans-Bold';
+    font-size: 40px;
+    line-height: 1.2;
+    color: var(--white);
+}
+.slide-intro .slide-txt p {
+    margin-bottom: 50px;
+    font-size: 20px;
+    color: var(--white);
+    opacity: 0.7;
+}
+.slide-intro .slide-txt a {
+    display: inline-block;
+    padding: 12px 40px 8px;
+    background: var(--primary);
+    color: var(--white);
+    font-weight: bold;
     border-radius: 30px;
 }
+
 .slide {
+    overflow: hidden;
     position: relative;
     height: 300px;
-    /* 튀어나온 메뉴 삭제 */
-    overflow: hidden;
-    background: lightgreen;
-}
-.slide-txt {
-    font-family: 'YEONGJUSeonbiTTF';
+    background: lightblue;
 }
 .slide ul {
     position: absolute;
@@ -199,71 +353,16 @@ header h1 a {
     width: 300%;
 }
 .slide ul li {
-    border: 1px solid #222;
+    width: 100%;
     height: 300px;
-    width: 100%;
-}
-.swiper img {
-    width: 100%;
-}
-.swiper-slide {
-    position: relative;
-}
-.slide-intro .swiper-slide .slide-txt {
-    transform: translateY(0);
-    opacity: 0;
-}
-.slide-intro .swiper-slide-active .slide-txt {
-    transform: translateY(-50px);
-    opacity: 1;
-    transition: all 1s ease-in 0.3s;
-}
-.slide-intro .swiper-slide::before {
-    content: '';
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100px;
-    height: 100px;
-    background-image: linear-gradient(to right, rgba(3, 0, 0, 0.8), rgba(255, 255, 222, 0.2));
-}
-.slide-intro .slide-txt {
-    /* 포지션으로 하늘에 띄우기 */
-    position: absolute;
-    /* 항상 세로의 가운데 있게 */
-    top: 50%;
-    left: 120px;
-    /* y축으로 -50퍼 당기기 */
-    transform: translateY(-50%);
-    /* 가로가 너무 길면 여자 얼굴까지 글씨 가서 50으로 줄임 */
-    width: 50%;
-}
-.slide-intro .slide-txt strong {
-    display: block;
-    /* 밑에 글과 20px 띄어지게 마진 주기 */
-    margin-bottom: 20px;
-    font-size: 50px;
-    font-weight: 800;
-    line-height: 1.2;
-    color: #fff;
+    border: 1px solid blue;
 }
 
-.slide-intro .slide-txt p {
-    margin-bottom: 50px;
-    font-size: 24px;
-    color: #fff;
-    opacity: 0.7;
-}
+/* .swiper-slide {
+    width: 600px !important;
+    margin-right: 0 !important;
+} */
 
-.slide-intro .slide-txt a {
-    display: inline-block;
-    padding: 12px 40px 8px;
-    background: green;
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 20px;
-}
-/* content */
 /* contents */
 main {
     display: flex;
@@ -280,15 +379,16 @@ main {
     font-size: 50px;
     font-weight: bold;
     text-align: center;
-    border-bottom: 5px solid #007aff;
+    border-bottom: 5px solid var(--primary);
 }
 .sec-g .sec-tit span {
-    color: #007aff;
+    color: var(--primary);
 }
 .sec-g .sec-cont {
     position: relative;
 }
 
+/* sec-business */
 .sec-business .sec-cont {
     display: flex;
     justify-content: space-between;
@@ -339,9 +439,10 @@ main {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    color: #fff;
+    color: var(--white);
 }
 
+/* sec-news */
 .sec-news .list-news {
     display: flex;
     justify-content: space-between;
@@ -358,6 +459,12 @@ main {
     position: relative;
     overflow: hidden;
     height: 270px;
+}
+.sec-news li .thumb img {
+    transition: transform 0.3s;
+}
+.sec-news li:hover .thumb img {
+    transform: scale(1.05);
 }
 .sec-news .thumb img {
     width: 100%;
@@ -388,40 +495,82 @@ main {
 .sec-news .txt em {
     font-style: normal;
 }
-/* footer */
+@media scree and (max-width: 600px) {
+    .sec-news .list-news {
+        flex-direction: column;
+    }
+    .sec-news .list-news li{
+        000
+    }
+}
+/* main section {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    flex: 1 1 0;
+    width: 32%;
+    height: 300px;
+    border: 1px solid red;
+} */
 footer {
     display: flex;
     justify-content: space-between;
-    height: 100px;
-    background: rgb(255, 230, 230);
 }
 footer div {
-    border: 1px solid orange;
     width: 15%;
-    height: 100%;
+    height: 100px;
 }
 footer .copyright {
-    width: 70%;
+    width: 60%;
 }
-/* id는 # */
-#layerpop {
+
+/* #layerPop */
+#layerPop {
+    display: none;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* fix도 기준 될 수 있음 */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    /* width: 100%; */
-    /* height: 100%; */
-    /* background: rgba(0, 0, 0, 0.5); */
+    /* width: 100%;
+    height: 100%; */
+    background: rgba(0, 0, 0, 0.5);
+    /* background: #000;
+    opacity: 0.5; */
 }
-#layerpop .layerbox {
+#layerPop .layer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -150px 0 0 -250px;
-
+    transform: translate(-50%, -50%);
+    /* margin: -150px 0 0 -250px; */
     width: 500px;
     height: 300px;
-    /* background: #fff; */
-    border-radius: 10px;
+    padding: 40px;
+    background: var(--white);
+    border-radius: 20px;
+}
+#layerPop .layer h2 {
+    text-align: center;
+}
+#layerPop .layer p {
+    overflow: auto;
+    flex: 1;
+    max-height: 110px;
+}
+#layerPop .layer button {
+    width: 100px;
+    height: 30px;
+    margin: 0 auto;
+    background: #333;
+    color: var(--white);
+    border: none;
+    cursor: pointer;
 }
