@@ -383,6 +383,7 @@ main {
 }
 .sec-g .sec-tit span {
     color: var(--primary);
+    font-size:50px;
 }
 .sec-g .sec-cont {
     position: relative;

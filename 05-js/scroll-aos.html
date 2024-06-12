@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>aos</title>
+    <style>
+        *{font-size: 40px;}
+        .extra{
+             display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f0f0f0;
+                font-size: 3rem;
+            }
+
+         .aos div{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+        width: 300px;
+        height: 300px;
+        margin: 10px;
+        text-align: center;
+        background:greenyellow;}
+
+     .aos .item1 {
+        opacity: 0; }   
+
+    .aos .item1.aos-animate{
+        background: lightblue;
+        transform: scale(8);
+        }
+    .aos.item5{
+         position: fixed;
+         top: 50%; 
+         left: 50%;
+         margin-right: -150px;
+         margin-left: -150px;
+         background-color:#3a3a;
+        }
+        
+           
+
+
+
+    </style>
+</head>
+<body>
+    <div class="extra" data-aos="fade-up">
+        <span>aos할거임
+        </span>
+    </div>
+    <div class="aos">
+        <div class="item1" data-aos='ani1' ></div>
+        <div class="item2">item2</div>
+        <div class="item3">item3</div>
+        <div class="item4">item4</div>
+        <div class="item5" data-aos="fade-right" data-aos-anchor=".item3">
+            item5</div>
+    </div>
+    <div class="extra" data-aos="fade-up">
+        <span>aos끝
+        </span>
+    </div>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init(
+         {offset: -200, // offset (in px) from the original trigger point
+         delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 400, // values from 0 to 3000, with step 50ms
+  easing: 'ease-in-out', // default easing for AOS animations
+  once: false, // whether animation should happen only once - while scrolling down
+  mirror: true, // whether elements should animate out while scrolling past them
+  anchorPlacement: 'top-center', // defines which position of the element regarding to window should trigger the animation
+         }
+    );
+  </script>
+</body>
+</html>
